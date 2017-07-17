@@ -21,6 +21,54 @@ router.get('/', function(req, res, next) {
 // localhost:3000/lunbo
 router.get('/lunbo', function(req, res) {
 
+		var page = req.query.page;
+		var count = req.query.count;
+		// 要去请求  卖座网的接口
+
+		// http://m.maizuo.com/v4/api/billboard/home?__t=1500253189212
+		var time = new Date().getTime();
+
+		http.get('http://m.maizuo.com/v4/api/billboard/home?__t=' + time, function(response) {
+
+			var data = '';
+			response.on('data', function(chunk) {
+				data += chunk;
+			})
+
+			response.on('end', function() {
+				res.send(data);
+			})
+
+		})
+
+	})
+	// 正在上映的接口
+router.get('/now', function(req, res) {
+
+		var page = req.query.page;
+		var count = req.query.count;
+		// 要去请求  卖座网的接口
+
+		// http://m.maizuo.com/v4/api/billboard/home?__t=1500253189212
+		var time = new Date().getTime();
+
+		http.get('http://m.maizuo.com/v4/api/film/now-playing?__t=' + time + '&page=1&count=5', function(response) {
+
+			var data = '';
+			response.on('data', function(chunk) {
+				data += chunk;
+			})
+
+			response.on('end', function() {
+				res.send(data);
+			})
+
+		})
+
+	})
+	// 即将上映的接口
+router.get('/future', function(req, res) {
+
 	var page = req.query.page;
 	var count = req.query.count;
 	// 要去请求  卖座网的接口
@@ -28,7 +76,7 @@ router.get('/lunbo', function(req, res) {
 	// http://m.maizuo.com/v4/api/billboard/home?__t=1500253189212
 	var time = new Date().getTime();
 
-	http.get('http://m.maizuo.com/v4/api/billboard/home?__t=' + time, function(response) {
+	http.get('http://m.maizuo.com/v4/api/film/coming-soon?__t=' + time + '&page=1&count=3', function(response) {
 
 		var data = '';
 		response.on('data', function(chunk) {

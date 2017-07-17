@@ -14,6 +14,8 @@ import Nav from './components/nav.js';
 import Aside from './components/aside.js';
 //引入section
 import Section from './components/section.js';
+//引入top
+import Top from './components/top.js';
 // UI组件
 class Apps extends Component {
 	render() {
@@ -24,7 +26,7 @@ class Apps extends Component {
 					this.props.isshow ? <Aside  /> : ''
 				}
 				<Section />
-				
+				<Top />
 				{/*
 			{this.props.biaoti}
 				<button onClick={this.props.change}>{this.props.btnname}</button>

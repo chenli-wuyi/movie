@@ -12,7 +12,10 @@ var logger = new createLogger();
 //定义一些初始状态
 var state = {
 	title: '卖座电影',
-	isshow: false
+	isshow: false,
+	list_lunbo: [],
+	list_now: [],
+	list_future: [],
 
 }
 var store = createStore(reducer, state, applyMiddleware(thunk, logger));

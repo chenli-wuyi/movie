@@ -4,4 +4,157 @@ section {
   section .lunbo {
     position: relative;
     display: block;
-    margin: 0px auto; }
+    margin: 0px auto;
+    height: 170.44px;
+    overflow: hidden; }
+    section .lunbo .swiper-container {
+      height: 170.44px; }
+      section .lunbo .swiper-container img {
+        width: 100%;
+        height: 100%; }
+  section .now_play {
+    box-sizing: border-box; }
+    section .now_play ul {
+      padding-top: 18px;
+      padding-left: 0;
+      margin-top: 0;
+      margin-bottom: 10px; }
+      section .now_play ul li {
+        display: list-item;
+        box-shadow: 0.5px 0.5px 1px #a8a8a8;
+        cursor: pointer;
+        margin: 0 17px 17px 17px;
+        background-color: #f9f9f9; }
+        section .now_play ul li .pic_img {
+          overflow: hidden;
+          position: relative;
+          max-width: 100%;
+          height: auto; }
+          section .now_play ul li .pic_img img {
+            height: 160.88px;
+            width: 100%; }
+        section .now_play ul li .pic_msg {
+          margin-right: -15px;
+          margin-left: -15px;
+          height: 50px; }
+          section .now_play ul li .pic_msg .pic_msg_left {
+            height: 50px;
+            padding-right: 0;
+            padding-top: 13px;
+            padding-left: 28px;
+            width: 83.33333333%;
+            float: left;
+            position: relative;
+            min-height: 1px; }
+            section .now_play ul li .pic_msg .pic_msg_left p {
+              font-size: 12px;
+              line-height: 15px;
+              -webkit-user-select: text;
+                 -moz-user-select: text;
+                  -ms-user-select: text;
+                      user-select: text; }
+            section .now_play ul li .pic_msg .pic_msg_left div {
+              font-size: 8px;
+              color: #9a9a9a;
+              line-height: 15px; }
+          section .now_play ul li .pic_msg .pic_msg_right {
+            float: left;
+            width: 16.66666667%;
+            padding-left: 0;
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px; }
+            section .now_play ul li .pic_msg .pic_msg_right span {
+              color: #f78360;
+              display: inline-block;
+              line-height: 50px;
+              float: right;
+              margin-right: 15px;
+              font-size: 18px; }
+    section .now_play .more {
+      width: 160px;
+      height: 30px;
+      border: 1px solid #aaa;
+      border-radius: 15px;
+      margin: 10px auto 30px;
+      text-align: center;
+      line-height: 30px;
+      font-size: 12px;
+      color: #616161;
+      cursor: pointer; }
+  section .future_play .futrue_title {
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #a8a8a8; }
+    section .future_play .futrue_title div {
+      width: 65px;
+      height: 20px;
+      margin: 0 auto;
+      margin-bottom: -10px;
+      border-radius: 5px;
+      font-size: 10px;
+      line-height: 20px;
+      text-align: center;
+      color: #eee;
+      background-color: #a7a7a7; }
+  section .future_play .future_movie ul {
+    padding-top: 18px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-left: 0; }
+    section .future_play .future_movie ul li {
+      margin: 0 17px 17px 17px;
+      background-color: #f9f9f9;
+      box-shadow: 0.5px 0.5px 1px #a8a8a8;
+      cursor: pointer; }
+      section .future_play .future_movie ul li .future_movie_pic {
+        overflow: hidden;
+        position: relative;
+        max-width: 100%;
+        height: auto; }
+        section .future_play .future_movie ul li .future_movie_pic img {
+          height: 160.88px;
+          width: 100%; }
+      section .future_play .future_movie ul li .future_movie_msg {
+        margin-right: -15px;
+        margin-left: -15px;
+        height: 35px; }
+        section .future_play .future_movie ul li .future_movie_msg .future_movie_msg_left {
+          float: left;
+          height: 35px;
+          padding-right: 0;
+          padding-top: 10px;
+          padding-left: 28px;
+          width: 58.33333333%; }
+          section .future_play .future_movie ul li .future_movie_msg .future_movie_msg_left span {
+            font-size: 12px;
+            line-height: 15px; }
+        section .future_play .future_movie ul li .future_movie_msg .future_movie_right {
+          width: 41.66666667%;
+          float: left;
+          height: 35px;
+          padding-left: 0;
+          position: relative;
+          min-height: 1px;
+          padding-right: 15px;
+          line-height: 30px; }
+          section .future_play .future_movie ul li .future_movie_msg .future_movie_right span {
+            font-size: 10px;
+            color: #f5a27d;
+            line-height: 15px;
+            height: 35px;
+            padding-right: 0;
+            padding-top: 10px;
+            padding-left: 28px; }
+  section .future_play .more_future {
+    width: 160px;
+    height: 30px;
+    border: 1px solid #aaa;
+    border-radius: 15px;
+    margin: 10px auto 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+    color: #616161;
+    cursor: pointer; }

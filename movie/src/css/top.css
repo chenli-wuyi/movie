@@ -1,0 +1,22 @@
+.back_top {
+  -webkit-transition: 800ms all ease;
+          transition: 800ms all ease;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  z-index: 400; }
+  .back_top .back_content {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer; }
+    .back_top .back_content i {
+      font-size: 28px;
+      font-family: "iconfont" !important;
+      font-style: normal; }
