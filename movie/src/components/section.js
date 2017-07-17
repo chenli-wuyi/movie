@@ -17,7 +17,7 @@ class Section extends Component {
 					        <div className="swiper-slide">Slide 1</div>
 					        <div className="swiper-slide">Slide 2</div>
 					        <div className="swiper-slide">Slide 3</div>
-					        
+
 					    </div>
 					    
 					</div>
@@ -33,7 +33,7 @@ class Section extends Component {
 		});
 		//做ajax
 		$.get('http://localhost:8080/lunbo', function(res) {
-			return res;
+			console.log(res)
 		})
 	}
 }
