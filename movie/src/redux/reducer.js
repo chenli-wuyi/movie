@@ -22,6 +22,23 @@ function reducer(state, action) {
 			return Object.assign({}, state, {
 				list_future: action.list_future
 			})
+		case "NOW_PLAY":
+			return Object.assign({}, state, {
+				now_play: action.now_play
+			})
+		case "COME_PLAY":
+			return Object.assign({}, state, {
+				come_play: action.come_play
+			})
+		case "DETAIL":
+			return Object.assign({}, state, {
+				get_detail: action.get_detail
+			})
+		case "SCROLL_TOP":
+			return Object.assign({}, state, {
+				scrolltop: action.scrolltop,
+				linkStyle: action.linkStyle
+			})
 		default:
 			return state;
 	}

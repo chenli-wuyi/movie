@@ -1,0 +1,122 @@
+.film{
+	
+	.film_content{
+		padding-left: 15px;
+	    padding-right: 15px;
+	    background-color: #f9f9f9;
+	    width: 100%;
+	    position: absolute;
+	    min-height: 100%;
+	   .film_table{
+	   	  height: 46px;
+		    margin: 0 auto;
+		    border-bottom: solid #fe6e00 1px;
+		    a{
+		    	display: inline-block;
+		    	float: left;
+			    width: 50%;
+			    height: 100%;
+			    text-align: center;
+			    font-size: 16px;
+			    line-height: 46px;
+			    color: #6a6a6a;
+			    cursor: pointer;
+		    }
+		    div{
+	    	  
+		    }
+		    .active {
+		    	color: #fe6e00;
+    			border-bottom: solid 2px #fe6e00;
+		    }
+	   } 
+	   .film_list{
+			li{
+				margin: 0;
+				padding: 0;
+				.list_mes{
+					width: 100%;
+				    padding: 20px 0;
+				    border-bottom: dashed 1px #c9c9c9;
+				    cursor: pointer;
+				    .list_left{
+				    	width: 60px;
+					    float: left;
+					    overflow: hidden;
+					    img{
+					    	display: block;
+						    max-width: 100%;
+						    height: 83px;
+					    }
+				    }
+				    .list_right{
+				    	padding-left: 15px;
+					    display: inline-block;
+					    width: 75%;
+					    .icon{
+					    	float: right;
+						    line-height: 29px;
+						    color: #c6c6c6;
+						    i{
+						    	font-size: 10px;
+						    }
+						    
+					    }
+					    .score{
+				    	    float: right;
+						    font-size: 16px;
+						    line-height: 32px;
+						    color: #fc7103;
+					    }
+					    .name{
+					    	font-size: 16px;
+						    line-height: 32px;
+						    color: #000;
+						    overflow: hidden;
+						    text-overflow: ellipsis;
+						    white-space: nowrap;
+					    }
+					    .message{
+					    	height: 24px;
+						    line-height: 24px;
+						    color: #8e8e8e;
+						    font-size: 12px;
+						    overflow: hidden;
+						    text-overflow: ellipsis;
+						    white-space: nowrap;
+						    width: 100%;
+						    display: inline-block;
+					    }
+					    .shuliang{
+				    	    line-height: 24px;
+						    color: #8e8e8e;
+						    font-size: 12px;
+						    span {
+						    	line-height: 24px;
+							    color: #8e8e8e;
+							    font-size: 12px;
+						    }
+						    .num{
+						    	color: #8aa2bf;
+						    }
+					    }
+					    .shijian{
+					    	line-height: 24px;
+						    color: #ffb375;
+						    font-size: 12px;
+					    }
+				    }
+				}
+			}
+	   }
+	}
+}
+
+
+
+
+
+
+
+
+

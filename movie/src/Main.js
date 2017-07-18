@@ -8,31 +8,48 @@ import './css/reset.css';
 import {
 	connect
 } from 'react-redux';
+//引入路由
+import {
+	HashRouter as Router,
+	Route
+
+} from 'react-router-dom';
 //因入nav
 import Nav from './components/nav.js';
 //引入aside
 import Aside from './components/aside.js';
 //引入section
 import Section from './components/section.js';
-//引入top
+//引入Film
+import NowPlay from './components/nowplay.js';
+import ComePlay from './components/comeplay.js';
+// 引入详情页
+import Detail from './components/detail.js';
+//引入top返回顶部
 import Top from './components/top.js';
 // UI组件
 class Apps extends Component {
 	render() {
 		return (
-			<div id="app">
-				<Nav />
-				{
-					this.props.isshow ? <Aside  /> : ''
-				}
-				<Section />
-				<Top />
-				{/*
-			{this.props.biaoti}
-				<button onClick={this.props.change}>{this.props.btnname}</button>
-				*/}
+			<Router>
+				<div id="app">
+					<Nav />
+					{
+						this.props.isshow ? <Aside  /> : ''
+					}
+					{/*<Section />*/}
+					 <Route exact  path="/" component={Section} />
+					 <Route  path="/film-playing" component={NowPlay} />
+					 <Route  path="/come-playing" component={ComePlay} />
+					  <Route  path="/detail/:id" component={Detail} />
+					<Top />
+					{/*
+				{this.props.biaoti}
+					<button onClick={this.props.change}>{this.props.btnname}</button>
+					*/}
 
-			</div>
+				</div>
+			</Router>
 		);
 	}
 }

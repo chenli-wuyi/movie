@@ -2,30 +2,90 @@ import React, {
 	Component
 } from 'react';
 
-import $ from 'jquery';
-// connect 方法
-import {
-	connect
-} from 'react-redux';
+
+
 //引入css
 import '../css/iconfont/iconfont.css';
 import '../css/top.css';
-class Tops extends Component {
+class Top extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			linkStyle: {
+				display: 'none'
+			}
+		};
+	}
+
 	render() {
+
 		return (
-			<div className="back_top">
+
+			<div style={this.state.linkStyle} ref='backtop' onClick ={this.show} className="back_top">
 				<div className="back_content">
 					<i className="iconfont">&#xe671;</i>
 				</div>
 			</div>
 		)
 	}
-}
-var Top = connect(
-	function(state, ownprops) {
-		return {
-
-		}
+	componentWillMount() {
+		window.addEventListener('scroll', this.handleScroll);
 	}
-)(Tops)
+
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
+	}
+
+	//获取滚动数据
+	handleScroll = () => {
+		var top = document.documentElement.scrollTop || document.body.scrollTop;
+		console.log(top);
+		this.setState({
+			linkStyle: {
+				display: top > 160 ? 'block' : 'none'
+			}
+		});
+		// return {
+		// 	type: 'SCROLL_TOP',
+		// 	scrolltop: top,
+		// 	linkStyle: {
+		// 		display: top > 100 ? 'block' : 'none'
+		// 	}
+		// }
+	}
+	show = () => {
+		const scrollTo = (element, to, duration) => {
+			if (duration <= 0) return;
+			const _element = element;
+			const difference = to - _element.scrollTop;
+			const perTick = (difference / duration) * 10;
+
+			setTimeout(() => {
+				_element.scrollTop += perTick;
+				if (_element.scrollTop === to) return;
+				scrollTo(_element, to, duration - 10);
+			}, 10);
+		};
+		scrollTo(document.body, 0, 100);
+	}
+
+}
+// var Top = connect(
+// 	function(state, ownprops) {
+// 		return {
+// 			scrolltop: state.scrolltop,
+// 			linkStyle: state.linkStyle,
+// 		}
+// 	},
+
+// 	{
+
+// 		show() {
+
+
+// 		}
+
+// 	}
+
+// )(Tops)
 export default Top;

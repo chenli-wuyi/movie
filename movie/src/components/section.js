@@ -7,7 +7,11 @@ import {
 	connect
 } from 'react-redux';
 
+//引入路由
+import {
+	NavLink
 
+} from 'react-router-dom';
 //引入swiper
 import '../css/swiper/swiper-3.4.2.min.css';
 import '../css/section.css';
@@ -15,10 +19,10 @@ import Swiper from 'swiper';
 
 class Sections extends Component {
 	render() {
-		return (
-			<section>
+			return (
+				<section>
 				{/*轮播*/} 
-				<div className="lunbo">
+				<div className="lunbo" ref="scrolltop">
 					<div className="swiper-container">
 					    <div className="swiper-wrapper">
 					  {/*
@@ -44,30 +48,36 @@ class Sections extends Component {
 					<ul>
 						{
 							this.props.list_now ? this.props.list_now.map(function(item,index){
+								var id = item.id;
+								var src = 'detail/'+id;
+								
 								return (
-									<li key={index}>
-										<div className="pic_cont" >
-											{/*上面的图*/}
-											<div className="pic_img">
-												<img src={item.cover.origin} alt="" />
-											</div>
-											{/*下面描述*/}
-											<div className="pic_msg">
-												<div className="pic_msg_left">
-													<p>{item.name}</p>
-													<div>
-														<span>{item.cinemaCount}</span>
-														<span>家影院上映 </span>
-														<span>{item.watchCount}</span>
-														<span>人购票</span>
+									<NavLink to={src}   key={index}>
+										<li >
+											<div className="pic_cont" >
+												{/*上面的图*/}
+												<div className="pic_img">
+													<img src={item.cover.origin} alt="" />
+												</div>
+												{/*下面描述*/}
+												<div className="pic_msg">
+													<div className="pic_msg_left">
+														<p>{item.name}</p>
+														<div>
+															<span>{item.cinemaCount}</span>
+															<span>家影院上映 </span>
+															<span>{item.watchCount}</span>
+															<span>人购票</span>
+														</div>
+													</div>
+													<div className="pic_msg_right">
+														<span>{item.grade}</span>
 													</div>
 												</div>
-												<div className="pic_msg_right">
-													<span>{item.grade}</span>
-												</div>
 											</div>
-										</div>
-									</li>
+										</li>
+									</NavLink>
+									
 								)
 							}):""
 						}
@@ -105,7 +115,6 @@ class Sections extends Component {
 					<div className="futrue_title">
 						<div>即将上映</div>
 					</div>
-
 					<div className="future_movie">
 						<ul>
 							{
@@ -114,8 +123,10 @@ class Sections extends Component {
 										var d = new Date(item.premiereAt);
 										var month = d.getMonth() + 1;
 										var date = d.getDate();
-										
+										var id = item.id;
+										var src = 'detail/'+id;
 								return (
+									<NavLink to={src} key={index}>
 									<li key={index}>
 										<div className="future_movie_content">
 											{/*图片*/}
@@ -127,34 +138,35 @@ class Sections extends Component {
 												<div className="future_movie_msg_left">
 													<span>{item.name}</span>
 												</div>
-				<div className="future_movie_right">
+												<div className="future_movie_right">
 													<span>{month}月{date}日上映</span>
 												</div>
 											</div>
 										</div>
 									</li>
+								</NavLink>
 								)
 							}):""
 						}
-					{/*
-							<li>
-								<div className="future_movie_content">
-									//图片
-									<div className="future_movie_pic">
-										<img src="https://pic.maizuo.com/usr/movie/07398444e312cbdcdc8739bdfff0944f.jpg" alt="" />
-									</div>
-								//图片信息
-									<div className='future_movie_msg'>
-										<div className="future_movie_msg_left">
-											<span>深夜食堂电影版2</span>
+						{/*
+								<li>
+									<div className="future_movie_content">
+										//图片
+										<div className="future_movie_pic">
+											<img src="https://pic.maizuo.com/usr/movie/07398444e312cbdcdc8739bdfff0944f.jpg" alt="" />
 										</div>
-										<div className="future_movie_right">
-											<span>7月18日上映</span>
+									//图片信息
+										<div className='future_movie_msg'>
+											<div className="future_movie_msg_left">
+												<span>深夜食堂电影版2</span>
+											</div>
+											<div className="future_movie_right">
+												<span>7月18日上映</span>
+											</div>
 										</div>
 									</div>
-								</div>
-							</li>
-					*/}
+								</li>
+						*/}
 							
 						</ul>
 					</div>
@@ -163,10 +175,11 @@ class Sections extends Component {
 					</div>
 				</div>
 			</section>
-		)
-	}
+			)
+		}
+		//更新完成时
 	componentDidUpdate() {
-			var mySwiper = new Swiper('.swiper-container', {
+			new Swiper('.swiper-container', {
 				autoplay: 3000,
 				loop: true,
 			});
@@ -194,7 +207,10 @@ class Sections extends Component {
 			var data = JSON.parse(res).data.films;
 			that.props.getFuture(data);
 		})
+
 	}
+
+
 }
 
 // 基于UI组件创建出 容器组件
@@ -234,12 +250,7 @@ var Section = connect(
 				list_future: data
 			}
 		},
-		//获取滚动数据
-		getScroll: function() {
-			var top = window.pageYOffset || document.documentElement.scrollTop;
-			console.log(top)
 
-		}
 	}
 
 

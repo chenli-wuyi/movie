@@ -42,7 +42,7 @@ router.get('/lunbo', function(req, res) {
 		})
 
 	})
-	// 正在上映的接口
+	// 正在上映的首页接口
 router.get('/now', function(req, res) {
 
 		var page = req.query.page;
@@ -66,7 +66,7 @@ router.get('/now', function(req, res) {
 		})
 
 	})
-	// 即将上映的接口
+	// 即将上映的首页接口
 router.get('/future', function(req, res) {
 
 	var page = req.query.page;
@@ -77,6 +77,80 @@ router.get('/future', function(req, res) {
 	var time = new Date().getTime();
 
 	http.get('http://m.maizuo.com/v4/api/film/coming-soon?__t=' + time + '&page=1&count=3', function(response) {
+
+		var data = '';
+		response.on('data', function(chunk) {
+			data += chunk;
+		})
+
+		response.on('end', function() {
+			res.send(data);
+		})
+
+	})
+
+})
+
+// 正在上映的影片接口
+router.get('/now_playing', function(req, res) {
+
+	var page = req.query.page;
+	var count = req.query.count;
+	// 要去请求  卖座网的接口
+
+	// http://m.maizuo.com/v4/api/billboard/home?__t=1500253189212
+	var time = new Date().getTime();
+
+	http.get('http://m.maizuo.com/v4/api/film/now-playing?page=1&count=7', function(response) {
+
+		var data = '';
+		response.on('data', function(chunk) {
+			data += chunk;
+		})
+
+		response.on('end', function() {
+			res.send(data);
+		})
+
+	})
+
+})
+
+// 即将上映影片的接口
+router.get('/come_play', function(req, res) {
+
+	var page = req.query.page;
+	var count = req.query.count;
+	// 要去请求  卖座网的接口
+
+	// http://m.maizuo.com/v4/api/billboard/home?__t=1500253189212
+	var time = new Date().getTime();
+
+	http.get('http://m.maizuo.com/v4/api/film/coming-soon?page=1&count=7', function(response) {
+
+		var data = '';
+		response.on('data', function(chunk) {
+			data += chunk;
+		})
+
+		response.on('end', function() {
+			res.send(data);
+		})
+
+	})
+
+})
+
+//详情页
+router.get('/detail', function(req, res) {
+
+	var id = req.query.id;
+	console.log(id)
+		// 要去请求  卖座网的接口
+		// http://m.maizuo.com/v4/api/film/3071?__t=1500376765963
+	var time = new Date().getTime();
+
+	http.get('http://m.maizuo.com/v4/api/film/' + id + '?__t=' + time, function(response) {
 
 		var data = '';
 		response.on('data', function(chunk) {

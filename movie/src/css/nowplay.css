@@ -1,0 +1,86 @@
+.film .film_content {
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #f9f9f9;
+  width: 100%;
+  position: absolute;
+  min-height: 100%; }
+  .film .film_content .film_table {
+    height: 46px;
+    margin: 0 auto;
+    border-bottom: solid #fe6e00 1px; }
+    .film .film_content .film_table a {
+      display: inline-block;
+      float: left;
+      width: 50%;
+      height: 100%;
+      text-align: center;
+      font-size: 16px;
+      line-height: 46px;
+      color: #6a6a6a;
+      cursor: pointer; }
+    .film .film_content .film_table .active {
+      color: #fe6e00;
+      border-bottom: solid 2px #fe6e00; }
+  .film .film_content .film_list li {
+    margin: 0;
+    padding: 0; }
+    .film .film_content .film_list li .list_mes {
+      width: 100%;
+      padding: 20px 0;
+      border-bottom: dashed 1px #c9c9c9;
+      cursor: pointer; }
+      .film .film_content .film_list li .list_mes .list_left {
+        width: 60px;
+        float: left;
+        overflow: hidden; }
+        .film .film_content .film_list li .list_mes .list_left img {
+          display: block;
+          max-width: 100%;
+          height: 83px; }
+      .film .film_content .film_list li .list_mes .list_right {
+        padding-left: 15px;
+        display: inline-block;
+        width: 75%; }
+        .film .film_content .film_list li .list_mes .list_right .icon {
+          float: right;
+          line-height: 29px;
+          color: #c6c6c6; }
+          .film .film_content .film_list li .list_mes .list_right .icon i {
+            font-size: 10px; }
+        .film .film_content .film_list li .list_mes .list_right .score {
+          float: right;
+          font-size: 16px;
+          line-height: 32px;
+          color: #fc7103; }
+        .film .film_content .film_list li .list_mes .list_right .name {
+          font-size: 16px;
+          line-height: 32px;
+          color: #000;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+        .film .film_content .film_list li .list_mes .list_right .message {
+          height: 24px;
+          line-height: 24px;
+          color: #8e8e8e;
+          font-size: 12px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 100%;
+          display: inline-block; }
+        .film .film_content .film_list li .list_mes .list_right .shuliang {
+          line-height: 24px;
+          color: #8e8e8e;
+          font-size: 12px; }
+          .film .film_content .film_list li .list_mes .list_right .shuliang span {
+            line-height: 24px;
+            color: #8e8e8e;
+            font-size: 12px; }
+          .film .film_content .film_list li .list_mes .list_right .shuliang .num {
+            color: #8aa2bf; }
+        .film .film_content .film_list li .list_mes .list_right .shijian {
+          line-height: 24px;
+          color: #ffb375;
+          font-size: 12px; }
