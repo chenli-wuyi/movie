@@ -11,7 +11,7 @@ import thunk from 'redux-thunk';
 var logger = new createLogger();
 //定义一些初始状态
 var state = {
-	title: ['卖座电影', '全部影院'],
+	title: '卖座电影',
 	isshow: false,
 	list_lunbo: [],
 	list_now: [],
@@ -66,7 +66,7 @@ var state = {
 		path: '/yanchu'
 	}, {
 		name: '我的',
-		path: '/wode'
+		path: '/login'
 	}, {
 		name: '卖座卡',
 		path: '/maizuoka'

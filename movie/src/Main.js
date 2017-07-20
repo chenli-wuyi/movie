@@ -10,7 +10,7 @@ import {
 } from 'react-redux';
 //引入路由
 import {
-	HashRouter as Router,
+	BrowserRouter as Router,
 	Route
 
 } from 'react-router-dom';
@@ -27,11 +27,14 @@ import ComePlay from './components/comeplay.js';
 import Cinema from './components/cinema.js';
 // 引入详情页
 import Detail from './components/detail.js';
+//引入我的
+import Wode from './components/wode.js';
+import My from './components/my.js';
 import Aaa from './components/aaa.js';
 //引入top返回顶部
 import Top from './components/top.js';
 // UI组件
-class Apps extends Component {
+class Mains extends Component {
 	render() {
 		return (
 			<Router>
@@ -42,10 +45,13 @@ class Apps extends Component {
 					}
 					{/*<Section />*/}
 					 <Route exact  path="/" component={Section} />
-					 <Route  path="/film-playing" component={NowPlay} />
-					 <Route  path="/come-playing" component={ComePlay} />
+					 <Route  exact path="/film-playing" component={NowPlay} />
+					 <Route exact path="/come-playing" component={ComePlay} />
 					  <Route  path="/detail/:id" component={Detail} />
 					  <Route  path="/cinema/" component={Cinema} />
+					  <Route  path="/login" component={Wode} />
+					  <Route exact  path="/mine" component={My} />
+
 					  <Route  path="/aaa/" component={Aaa} />
 					<Top />
 					{/*
@@ -60,7 +66,7 @@ class Apps extends Component {
 }
 
 // 基于UI组件创建出 容器组件
-var App = connect(
+var Main = connect(
 	// 指定两个参数
 	// 1. ui组件需要的数据
 	// 2. ui组件上的方法操作
@@ -82,8 +88,8 @@ var App = connect(
 	}
 
 
-)(Apps);
+)(Mains);
 
 
 // 暴露容器组件
-export default App;
+export default Main;

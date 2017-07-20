@@ -25,14 +25,17 @@ const cData = [
 	"http://img1.gtimg.com/15/1580/158031/15803182_1200x1000_0.jpg",
 	"http://img1.gtimg.com/15/1580/158031/15803183_1200x1000_0.jpg",
 
-]
-const loadMoreLimitNum = 2;
+
+];
+var page = 0;
+const loadMoreLimitNum = Math.floor(cData.length);
 class NowPlays extends Component {
 	constructor() {
 		super();
 		this.state = {
 			hasMore: true,
 			data: cData,
+			page: 0,
 			action: STATS.init,
 			index: loadMoreLimitNum //loading more test time limit
 		}
@@ -68,7 +71,8 @@ class NowPlays extends Component {
 				data: cData,
 				hasMore: true,
 				action: STATS.refreshed,
-				index: loadMoreLimitNum
+				index: loadMoreLimitNum,
+				page: page,
 			});
 		}, 3000)
 
@@ -78,6 +82,7 @@ class NowPlays extends Component {
 	}
 
 	handLoadMore = () => {
+
 		if (STATS.loading === this.state.action) {
 			return false
 		}
@@ -90,9 +95,10 @@ class NowPlays extends Component {
 				});
 			} else {
 				this.setState({
-					data: [...this.state.data, cData[0], cData[0]],
+					data: [...this.state.data, cData[0], cData[1]],
 					action: STATS.reset,
-					index: this.state.index - 1
+					index: this.state.index - 1,
+					page: page++,
 				});
 			}
 		}, 3000)
@@ -100,6 +106,7 @@ class NowPlays extends Component {
 		this.setState({
 			action: STATS.loading
 		})
+
 	}
 	render() {
 		const {
@@ -204,10 +211,17 @@ class NowPlays extends Component {
 
 		)
 	}
+	componentDidUpdate() {
+
+
+
+	}
 	componentDidMount() {
 		var that = this;
-
-		$.get('http://localhost:8080/now_playing', function(res) {
+		console.log(page)
+		$.get('http://localhost:8080/now_playing?', {
+			page: page
+		}, function(res) {
 			var data = JSON.parse(res).data.films;
 
 			that.props.getNowplay(data);

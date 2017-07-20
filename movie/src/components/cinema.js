@@ -46,7 +46,7 @@ class Cinemas extends Component {
 												              			{
 												              				items.labels ? items.labels.map(function(item,index){
 												              					
-												              					if(item.type === "SUNDRY" && item.type === "SUNDRY"){
+												              					if(item.type === "SUNDRY"){
 												              						return (
 												              							<span className="youhui" key={index}>
 																	              			<i>可乐爆米花</i>
@@ -227,7 +227,7 @@ var Cinema = connect(
 		}
 
 		return {
-			title: state.title,
+
 			list_cinemas: state.list_cinemas,
 			list_cinemas_name: state.list_cinemas_name
 		}
@@ -235,7 +235,7 @@ var Cinema = connect(
 		getCinemas: function(data) {
 			return {
 				type: 'GET_CINEMAS',
-				list_cinemas: data
+				list_cinemas: data,
 
 			}
 

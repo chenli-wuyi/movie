@@ -1,0 +1,63 @@
+.my .conent {
+  position: absolute;
+  height: 100%;
+  width: 100%; }
+  .my .conent .top {
+    background-color: #303030;
+    color: #fff; }
+    .my .conent .top header {
+      padding: 36px 12px 24px 10%;
+      overflow: hidden; }
+      .my .conent .top header img {
+        width: 92px;
+        height: 92px;
+        border-radius: 50%;
+        margin-right: 14px;
+        float: left;
+        vertical-align: middle;
+        border: 0; }
+      .my .conent .top header div {
+        float: left;
+        margin-top: 16px; }
+        .my .conent .top header div p {
+          font-size: 14px;
+          margin-bottom: 2px;
+          margin: 0 0 10px; }
+          .my .conent .top header div p.tuichu {
+            color: #ffbd80;
+            text-decoration: underline; }
+  .my .conent .foot {
+    padding: 0;
+    width: 100%; }
+    .my .conent .foot .wrapper {
+      width: 100%;
+      margin: 14px 0;
+      line-height: 59px;
+      background-color: #fff;
+      cursor: pointer;
+      font-size: 12px;
+      color: #222; }
+      .my .conent .foot .wrapper.nobom {
+        margin: 0; }
+      .my .conent .foot .wrapper .msg {
+        margin: 0 12px;
+        overflow: hidden; }
+        .my .conent .foot .wrapper .msg.borbom {
+          border-bottom: solid 1px #eaeaea; }
+        .my .conent .foot .wrapper .msg .total {
+          font-size: 24px;
+          vertical-align: sub;
+          font-family: "iconfont";
+          font-style: none; }
+          .my .conent .foot .wrapper .msg .total.yanse {
+            color: #7bcdcc; }
+        .my .conent .foot .wrapper .msg .name {
+          margin-left: 9px;
+          line-height: 35px;
+          vertical-align: inherit; }
+        .my .conent .foot .wrapper .msg .shuliang {
+          float: right; }
+          .my .conent .foot .wrapper .msg .shuliang .yan {
+            color: #e7a858; }
+          .my .conent .foot .wrapper .msg .shuliang i {
+            color: #bdbdbd; }

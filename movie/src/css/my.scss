@@ -1,0 +1,103 @@
+.my{
+
+	.conent{
+		position: absolute;
+	    height: 100%;
+	    width: 100%;
+	    .top{
+	    	background-color: #303030;
+   			color: #fff;
+   			header{
+   				padding: 36px 12px 24px 10%;
+   				overflow: hidden;
+   				img{
+   					width: 92px;
+				    height: 92px;
+				    border-radius: 50%;
+				    margin-right: 14px;
+				    float: left;
+			        vertical-align: middle;
+			        border: 0;
+   				}
+   				div{
+   					float: left;
+    				margin-top: 16px;
+					p{
+						font-size: 14px;
+						margin-bottom: 2px;
+						margin: 0 0 10px;
+						&.tuichu{
+							color: #ffbd80;
+							text-decoration: underline;
+						}
+					}
+
+   				}	
+   			}
+	    }
+	    .foot{
+	    	padding: 0;
+   			width: 100%;
+   			.wrapper{
+   				width: 100%;
+			    margin: 14px 0;
+			    line-height: 59px;
+			    background-color: #fff;
+			    cursor: pointer;
+			    font-size: 12px;
+			    color: #222;
+			    &.nobom{
+			    	margin:0;
+			    }
+			    .msg{
+			    	margin: 0 12px;
+			    	overflow: hidden;
+			    	&.borbom{
+			    		border-bottom: solid 1px #eaeaea;
+			    	}
+			    	.total{
+			    		font-size: 24px;
+    					vertical-align: sub;
+					    font-family: "iconfont" ;
+					    font-style: none;
+					    &.yanse{
+					    	color: #7bcdcc;
+					    }
+			    	}
+			    	.name{
+						margin-left: 9px;
+					    line-height: 35px;
+					    vertical-align: inherit;
+			    	}
+			    	.shuliang{
+			    		float: right;
+			    		.yan{
+			    			color:#e7a858;
+			    		}
+			    		i{
+			    			color:#bdbdbd;
+			    		}
+			    	}
+			    }
+   			}
+	    }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

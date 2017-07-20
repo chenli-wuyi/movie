@@ -36,7 +36,8 @@ function reducer(state, action) {
 			})
 		case "GET_CINEMAS":
 			return Object.assign({}, state, {
-				list_cinemas: action.list_cinemas
+				list_cinemas: action.list_cinemas,
+
 			})
 		case "SCROLL_TOP":
 			return Object.assign({}, state, {

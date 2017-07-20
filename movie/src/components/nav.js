@@ -19,7 +19,7 @@ class Navs extends Component {
 						 <div className="icon">
 						 	<i className="iconfont ">&#xe66c;</i>
 						 </div>
-						<div className="movename">{this.props.title[0]}</div>
+						<div className="movename">{this.props.title}</div>
 					</a>
 				</h1>
 				<div className="nav_right">
@@ -27,7 +27,7 @@ class Navs extends Component {
 						<span>深圳</span>
 						<i className="iconfont ">&#xe74a;</i>
 					</a>
-					<a className="user" href="javascript:;">
+					<a className="user" href="/login">
 						<i className="iconfont ">&#xe66e;</i>
 					</a>
 				</div>
@@ -44,7 +44,8 @@ var Nav = connect(
 
 	function(state, ownProps) {
 		return {
-			title: state.title
+			title: state.title,
+
 		}
 	},
 
@@ -53,7 +54,8 @@ var Nav = connect(
 			// 只需要return 一个 action
 			return {
 				type: 'IS_SHOW',
-				isshow: store.getState().isshow
+				isshow: store.getState().isshow,
+
 			}
 		}
 	}

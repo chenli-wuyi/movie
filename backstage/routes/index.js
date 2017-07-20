@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var http = require('http');
 
+
+
 router.all('*', function(req, res, next) {
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
@@ -94,14 +96,14 @@ router.get('/future', function(req, res) {
 // 正在上映的影片接口
 router.get('/now_playing', function(req, res) {
 
-	var id = req.query.id;
-	console.log(id)
+	var page = req.query.page;
+	console.log(page)
 		// 要去请求  卖座网的接口
 
 	// http://m.maizuo.com/v4/api/film/now-playing?page=1&count=7
 	var time = new Date().getTime();
 
-	http.get('http://m.maizuo.com/v4/api/film/now-playing?page=1&count=7', function(response) {
+	http.get('http://m.maizuo.com/v4/api/film/now-playing?page=' + page + '&count=7', function(response) {
 
 		var data = '';
 		response.on('data', function(chunk) {
@@ -189,4 +191,6 @@ router.get('/cinema', function(req, res) {
 	})
 
 })
+
+
 module.exports = router;

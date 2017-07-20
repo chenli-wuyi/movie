@@ -25,10 +25,11 @@ class Asides extends Component {
 							<ul onClick = {this.props.change}>
 							{
 								this.props.aside_list.map(function(item,index){
+									
 									return(
 										
-										<li key={index} >
-											<NavLink to={item.path} exact>
+										<li  key={index} >
+											<NavLink  to={item.path} exact>
 												<span>{item.name}</span>
 												<i className="iconfont ">&#xe678;</i>
 											</NavLink>
@@ -108,6 +109,11 @@ var Aside = connect(
 			return {
 				type: 'IS_SHOW',
 				isshow: store.getState().isshow
+			}
+		},
+		changTitle: function() {
+			return {
+
 			}
 		}
 	}
