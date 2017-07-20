@@ -1,0 +1,164 @@
+
+.cinema {
+	
+	section{
+	    background-color: #fff;
+		width: 100%;
+		.content{
+			.antd_cont{
+				.name {
+				    /*height: 40px;*/
+				    /*line-height: 40px;*/
+				    font-size: 14px;
+				   
+				    background: #e1e1e1;
+				    margin-bottom: 1px;
+				    color: #636363;
+				    cursor: pointer;
+				    .am-accordion-header{
+				    	position: relative;
+					    color: #000;
+					    font-size: 14px;
+					    height: 40px;
+					    line-height: 40px;
+					    background-color: #fff;
+					     background: #e1e1e1;
+					    box-sizing: content-box;
+					    padding-left: 16px;
+					    padding-right: 0;
+					    width: auto;
+					    overflow: hidden;
+					    text-overflow: ellipsis;
+					    white-space: nowrap;
+					    i{
+					    	
+					    	display: none;
+					    }
+				    }
+				  .am-accordion-content{
+						width:100%;
+
+					    position: relative;
+					    left: 0;
+					      .am-list-item{
+							padding-left: 0;
+							height: 120px;
+							.am-list-line{
+								
+								height: 100%;
+								padding: 10px 15px 12px 16px;
+								.am-list-content{
+								    padding: 0;
+								    height: 100%;
+									cursor: pointer;
+									flex: 1;
+								    color: #333;
+								    font-size: 16px;
+								    line-height: 16px;
+								    text-align: left;
+								    width: auto;
+								    overflow: hidden;
+								    text-overflow: ellipsis;
+								    white-space: nowrap;
+								    font-family: 'Microsoft YaHei', Tahoma, Helvetica, Arial, sans-serif;
+								    .left{
+								    	width: 75%;
+									    min-width: 230px;
+									    float: left;
+									    cursor: pointer;
+									    overflow: hidden;
+									    .mingzi,.youhui,.weizhi,.juli{
+											display: block;
+											margin-bottom: 5px;
+    
+									    }
+									    .mingzi{
+									    	width:100%;
+									    	font-size: 16px;
+									    	margin-bottom: 5px;
+									    	span{
+									    		overflow: hidden;
+											    text-overflow: ellipsis;
+											    white-space: nowrap;
+											    display: inline-block;
+											    vertical-align: text-top;
+											    max-width: 80%;
+											    font-style: normal;
+    											margin-right: 3px;
+									    	}
+									    	i{
+									    		box-sizing: border-box;
+									    		font-style: normal;
+    											margin-right: 3px;
+    											font-size: 12px;
+    											color:#fc8558;
+    											text-align: center;
+    											line-height: 16px;
+    											display: inline-block;
+    											width: 20px;
+    											height: 20px;
+    											border-radius: 50%;
+    											border:1px solid #fc8558;
+									    	}
+									    	.lanse{
+									    		color:#88aec8;
+									    		border-color: #88aec8;
+									    	}
+									    }
+									    .youhui{
+											font-size: 10px;
+											i{
+											    display: inline-block;
+											    border-radius: 3px;
+											    padding: 0 5px;
+											    margin: 0 5px;
+											    font-style: normal;
+											    color: #fff;
+											    height: 15px;
+											    line-height: 15px;
+											    background-color: #51add0;
+											}
+											.imax {
+											display:none;
+											}
+											.huodong{
+												background-color: #ff9658;
+											}
+									    }
+									    .weizhi{
+
+										    font-size: 12px;
+										    overflow: hidden;
+										    text-overflow: ellipsis;
+										    white-space: nowrap;
+										    width: 100%;
+										    color: #ccc;
+
+									    }
+									    .juli{
+									    	font-size: 12px;
+    										color: #ccc;
+    										
+									    }
+
+								    }
+								    .right{
+								    	float: right !important;
+									    line-height: 36px;
+									    color: #c6c6c6;
+									    padding-left: 0;
+    									margin-bottom: 0;
+								    }
+								}
+							}
+					    }
+
+				    }
+				}
+			}
+		}
+	}
+}
+
+
+

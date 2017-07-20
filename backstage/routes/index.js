@@ -94,11 +94,11 @@ router.get('/future', function(req, res) {
 // 正在上映的影片接口
 router.get('/now_playing', function(req, res) {
 
-	var page = req.query.page;
-	var count = req.query.count;
-	// 要去请求  卖座网的接口
+	var id = req.query.id;
+	console.log(id)
+		// 要去请求  卖座网的接口
 
-	// http://m.maizuo.com/v4/api/billboard/home?__t=1500253189212
+	// http://m.maizuo.com/v4/api/film/now-playing?page=1&count=7
 	var time = new Date().getTime();
 
 	http.get('http://m.maizuo.com/v4/api/film/now-playing?page=1&count=7', function(response) {
@@ -151,6 +151,31 @@ router.get('/detail', function(req, res) {
 	var time = new Date().getTime();
 
 	http.get('http://m.maizuo.com/v4/api/film/' + id + '?__t=' + time, function(response) {
+
+		var data = '';
+		response.on('data', function(chunk) {
+			data += chunk;
+		})
+
+		response.on('end', function() {
+			res.send(data);
+		})
+
+	})
+
+})
+
+// 影院的接口
+router.get('/cinema', function(req, res) {
+
+	var page = req.query.page;
+	var count = req.query.count;
+	// 要去请求  卖座网的接口
+
+	// http://m.maizuo.com/v4/api/cinema?__t=1500435535266
+	var time = new Date().getTime();
+
+	http.get('http://m.maizuo.com/v4/api/cinema?__t=' + time, function(response) {
 
 		var data = '';
 		response.on('data', function(chunk) {

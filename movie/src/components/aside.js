@@ -13,7 +13,8 @@ import {
 
 	NavLink
 } from 'react-router-dom';
-
+//引入store
+import store from '../redux/store.js';
 class Asides extends Component {
 	render() {
 		return (
@@ -21,12 +22,12 @@ class Asides extends Component {
 			<aside>
 					<div className="aside_content">
 						<nav>
-							<ul>
+							<ul onClick = {this.props.change}>
 							{
 								this.props.aside_list.map(function(item,index){
 									return(
 										
-										<li key={index}>
+										<li key={index} >
 											<NavLink to={item.path} exact>
 												<span>{item.name}</span>
 												<i className="iconfont ">&#xe678;</i>
@@ -82,6 +83,12 @@ class Asides extends Component {
 
 		)
 	}
+	componentDidUpdate() {
+
+	}
+	changeStyle = function() {
+
+	}
 
 }
 
@@ -99,8 +106,8 @@ var Aside = connect(
 		change: function() {
 			// 只需要return 一个 action
 			return {
-				type: 'CHANGE_TITLE',
-				title: '详情页'
+				type: 'IS_SHOW',
+				isshow: store.getState().isshow
 			}
 		}
 	}

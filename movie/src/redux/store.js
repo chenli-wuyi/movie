@@ -11,7 +11,7 @@ import thunk from 'redux-thunk';
 var logger = new createLogger();
 //定义一些初始状态
 var state = {
-	title: '卖座电影',
+	title: ['卖座电影', '全部影院'],
 	isshow: false,
 	list_lunbo: [],
 	list_now: [],
@@ -19,6 +19,35 @@ var state = {
 	now_play: [],
 	come_play: [],
 	get_detail: null,
+	list_cinemas: [],
+	list_cinemas_name: [{
+		name: '福田区',
+		arr: []
+	}, {
+		name: '龙岗区',
+		arr: []
+	}, {
+		name: '宝安区',
+		arr: []
+	}, {
+		name: '坪山新区',
+		arr: []
+	}, {
+		name: '南山区',
+		arr: []
+	}, {
+		name: '光明新区',
+		arr: []
+	}, {
+		name: '龙华新区',
+		arr: []
+	}, {
+		name: '罗湖区',
+		arr: []
+	}, {
+		name: '盐田区',
+		arr: []
+	}, ],
 	xingqi: ['日', '一', '二', '三', '四', '五', '六'],
 	aside_list: [{
 		name: '首页',

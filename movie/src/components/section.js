@@ -108,7 +108,7 @@ class Sections extends Component {
 					*/}
 						
 					</ul>
-					<div className="more">更多热映电影</div>
+					<div className="more"><NavLink to="/film-playing">更多热映电影</NavLink></div>
 				</div> 
 				{/*即将上映*/}
 				<div className="future_play">
@@ -171,7 +171,7 @@ class Sections extends Component {
 						</ul>
 					</div>
 					<div className="more_future">
-						更多即将上映电影
+						<NavLink to="/come-playing">更多即将上映电影</NavLink>
 					</div>
 				</div>
 			</section>

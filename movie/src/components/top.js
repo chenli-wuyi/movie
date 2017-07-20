@@ -39,7 +39,7 @@ class Top extends Component {
 	//获取滚动数据
 	handleScroll = () => {
 		var top = document.documentElement.scrollTop || document.body.scrollTop;
-		console.log(top);
+
 		this.setState({
 			linkStyle: {
 				display: top > 160 ? 'block' : 'none'

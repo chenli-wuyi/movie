@@ -23,8 +23,11 @@ import Section from './components/section.js';
 //引入Film
 import NowPlay from './components/nowplay.js';
 import ComePlay from './components/comeplay.js';
+//因入影院
+import Cinema from './components/cinema.js';
 // 引入详情页
 import Detail from './components/detail.js';
+import Aaa from './components/aaa.js';
 //引入top返回顶部
 import Top from './components/top.js';
 // UI组件
@@ -42,6 +45,8 @@ class Apps extends Component {
 					 <Route  path="/film-playing" component={NowPlay} />
 					 <Route  path="/come-playing" component={ComePlay} />
 					  <Route  path="/detail/:id" component={Detail} />
+					  <Route  path="/cinema/" component={Cinema} />
+					  <Route  path="/aaa/" component={Aaa} />
 					<Top />
 					{/*
 				{this.props.biaoti}

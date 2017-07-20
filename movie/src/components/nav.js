@@ -19,7 +19,7 @@ class Navs extends Component {
 						 <div className="icon">
 						 	<i className="iconfont ">&#xe66c;</i>
 						 </div>
-						<div className="movename">{this.props.title}</div>
+						<div className="movename">{this.props.title[0]}</div>
 					</a>
 				</h1>
 				<div className="nav_right">
