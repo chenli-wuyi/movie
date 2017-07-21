@@ -31,6 +31,8 @@ import Detail from './components/detail.js';
 import Wode from './components/wode.js';
 import My from './components/my.js';
 import Aaa from './components/aaa.js';
+//引入演出
+import Yanchu from './components/yanchu.js';
 //引入top返回顶部
 import Top from './components/top.js';
 // UI组件
@@ -51,7 +53,8 @@ class Mains extends Component {
 					  <Route  path="/cinema/" component={Cinema} />
 					  <Route  path="/login" component={Wode} />
 					  <Route exact  path="/mine" component={My} />
-
+					  <Route exact  path="/yanchu" component={Yanchu} />
+						
 					  <Route  path="/aaa/" component={Aaa} />
 					<Top />
 					{/*

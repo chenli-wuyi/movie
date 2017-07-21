@@ -11,6 +11,7 @@ import thunk from 'redux-thunk';
 var logger = new createLogger();
 //定义一些初始状态
 var state = {
+	page: 1,
 	title: '卖座电影',
 	isshow: false,
 	list_lunbo: [],
@@ -20,6 +21,7 @@ var state = {
 	come_play: [],
 	get_detail: null,
 	list_cinemas: [],
+	yanchu_list: [],
 	list_cinemas_name: [{
 		name: '福田区',
 		arr: []
@@ -52,24 +54,31 @@ var state = {
 	aside_list: [{
 		name: '首页',
 		path: '/',
+		title: '卖座电影',
 	}, {
 		name: '影片',
-		path: '/film-playing'
+		path: '/film-playing',
+		title: '卖座电影',
 	}, {
 		name: '影院',
-		path: '/cinema'
+		path: '/cinema',
+		title: '全部影院',
 	}, {
 		name: '商城',
-		path: '/shopping'
+		path: '/shopping',
+		title: '卖座商城',
 	}, {
 		name: '演出',
-		path: '/yanchu'
+		path: '/yanchu',
+		title: '卖座.HOPPA演出',
 	}, {
 		name: '我的',
-		path: '/login'
+		path: '/login',
+		title: '我的',
 	}, {
 		name: '卖座卡',
-		path: '/maizuoka'
+		path: '/maizuoka',
+		title: '查询/绑定/激活卖座卡',
 	}],
 
 }

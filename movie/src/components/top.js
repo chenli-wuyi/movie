@@ -19,19 +19,20 @@ class Top extends Component {
 
 	render() {
 
-		return (
+			return (
 
-			<div style={this.state.linkStyle} ref='backtop' onClick ={this.show} className="back_top">
+				<div style={this.state.linkStyle} ref='backtop' onClick ={this.show} className="back_top">
 				<div className="back_content">
 					<i className="iconfont">&#xe671;</i>
 				</div>
 			</div>
-		)
-	}
+			)
+		}
+		//即将进入dom
 	componentWillMount() {
-		window.addEventListener('scroll', this.handleScroll);
-	}
-
+			window.addEventListener('scroll', this.handleScroll);
+		}
+		//销毁时
 	componentWillUnmount() {
 		window.removeEventListener('scroll', this.handleScroll);
 	}
@@ -64,7 +65,7 @@ class Top extends Component {
 				_element.scrollTop += perTick;
 				if (_element.scrollTop === to) return;
 				scrollTo(_element, to, duration - 10);
-			}, 10);
+			}, 30);
 		};
 		scrollTo(document.body, 0, 100);
 	}

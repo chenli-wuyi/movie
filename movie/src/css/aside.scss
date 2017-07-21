@@ -17,6 +17,7 @@ aside{
         right: 0;
         bottom: 0;
         left: 0;
+        display: flex;
         transition: all ease 0.4s;
         -webkit-transition: all ease 0.4s;
         nav {
@@ -27,7 +28,8 @@ aside{
             display: block;
             height: 100%;
             top: 0;
-            right: 110px;
+            /*right: 110px;*/
+            width:70%;
             bottom: 0;
             left: 0;
             transition: all ease 0.4s;
@@ -45,6 +47,12 @@ aside{
                     }
                 }
             }
+        }
+        div{
+            width:30%;
+            position: absolute;
+            right: 0;
+            height: 100%;
         }
     }
 }

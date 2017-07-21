@@ -16,6 +16,10 @@ aside {
     right: 0;
     bottom: 0;
     left: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
     transition: all ease 0.4s;
     -webkit-transition: all ease 0.4s; }
     aside .aside_content nav {
@@ -26,7 +30,8 @@ aside {
       display: block;
       height: 100%;
       top: 0;
-      right: 110px;
+      /*right: 110px;*/
+      width: 70%;
       bottom: 0;
       left: 0;
       transition: all ease 0.4s;
@@ -41,3 +46,8 @@ aside {
             float: right;
             color: #666;
             font-size: 14px; }
+    aside .aside_content div {
+      width: 30%;
+      position: absolute;
+      right: 0;
+      height: 100%; }

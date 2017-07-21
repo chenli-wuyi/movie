@@ -147,7 +147,8 @@ var Detail = connect(
 		getDetail: function(data) {
 			return {
 				type: 'DETAIL',
-				get_detail: data
+				get_detail: data,
+				title: data.name
 			}
 		}
 	}

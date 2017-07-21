@@ -23,8 +23,21 @@ function reducer(state, action) {
 				list_future: action.list_future
 			})
 		case "NOW_PLAY":
+
+			var now_list = [];
+			for (var i = 0, len = state.now_play.length; i < len; i++) {
+				now_list.push(state.now_play[i])
+			}
+			//追加
+			now_list.concat();
 			return Object.assign({}, state, {
-				now_play: action.now_play
+				now_play: action.now_play,
+
+			})
+		case "CHANGE_PAGE":
+			return Object.assign({}, state, {
+				page: action.page++,
+
 			})
 		case "COME_PLAY":
 			return Object.assign({}, state, {
@@ -32,11 +45,17 @@ function reducer(state, action) {
 			})
 		case "DETAIL":
 			return Object.assign({}, state, {
-				get_detail: action.get_detail
+				get_detail: action.get_detail,
+				title: action.title
 			})
 		case "GET_CINEMAS":
 			return Object.assign({}, state, {
 				list_cinemas: action.list_cinemas,
+
+			})
+		case "YANCHU":
+			return Object.assign({}, state, {
+				yanchu_list: action.yanchu_list,
 
 			})
 		case "SCROLL_TOP":

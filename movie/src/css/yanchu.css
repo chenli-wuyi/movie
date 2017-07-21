@@ -1,0 +1,91 @@
+.yanchu section {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-bottom: 50px; }
+  .yanchu section .cont {
+    width: 100%;
+    margin: 0 auto; }
+    .yanchu section .cont ul {
+      padding: 0;
+      margin: 0;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      .yanchu section .cont ul li {
+        background-color: #fff;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        margin-top: 5px;
+        box-sizing: border-box;
+        padding: 10px 10px 15px 10px;
+        min-height: 200px;
+        overflow-x: hidden; }
+        .yanchu section .cont ul li .pic {
+          background-color: #ebebeb;
+          box-sizing: border-box;
+          width: 100%;
+          border-radius: 2px; }
+          .yanchu section .cont ul li .pic img {
+            width: 100%;
+            opacity: 1;
+            display: block; }
+        .yanchu section .cont ul li p {
+          font-size: 17px;
+          margin: 6px 0 0 0;
+          line-height: 1.2em; }
+        .yanchu section .cont ul li .count {
+          max-height: 38px;
+          margin-top: 10px;
+          display: -webkit-inline-box;
+          display: -webkit-inline-flex;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+          white-space: nowrap;
+          -webkit-box-pack: start;
+          -webkit-justify-content: flex-start;
+              -ms-flex-pack: start;
+                  justify-content: flex-start;
+          overflow: hidden;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center; }
+          .yanchu section .cont ul li .count div {
+            max-height: 38px;
+            max-width: 101px;
+            font-size: 14px;
+            padding: 4px;
+            color: #ff5000;
+            text-align: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: url("//static.maizuo.com/ticket/h5/v1/static/asset/08e233f59b4d9109827be72fd542b291.svg");
+            display: inline-block;
+            margin: 0 0 0 10px; }
+            .yanchu section .cont ul li .count div span {
+              width: 89px;
+              font-size: 8px;
+              color: rgba(0, 0, 0, 0.4);
+              display: block;
+              text-align: center; }
+          .yanchu section .cont ul li .count svg {
+            margin: 0 0 0 10px; }
+            .yanchu section .cont ul li .count svg g {
+              fill: black;
+              fill-opacity: 0.26;
+              fill-rule: evenodd; }
+    .yanchu section .cont p {
+      font-size: 14px;
+      margin: 20px auto 0;
+      color: rgba(150, 144, 144, 0.4);
+      text-align: center; }

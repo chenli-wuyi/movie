@@ -15,6 +15,7 @@ import {
 import ReactPullLoad, {
 	STATS
 } from 'react-pullload';
+
 //引入css
 import '../css/nowplay.css';
 import '../css/iconfont/iconfont.css';
@@ -24,10 +25,8 @@ const cData = [
 	"http://img1.gtimg.com/15/1580/158031/15803181_1200x1000_0.jpg",
 	"http://img1.gtimg.com/15/1580/158031/15803182_1200x1000_0.jpg",
 	"http://img1.gtimg.com/15/1580/158031/15803183_1200x1000_0.jpg",
-
-
 ];
-var page = 0;
+var page = 1;
 const loadMoreLimitNum = Math.floor(cData.length);
 class NowPlays extends Component {
 	constructor() {
@@ -35,7 +34,7 @@ class NowPlays extends Component {
 		this.state = {
 			hasMore: true,
 			data: cData,
-			page: 0,
+			page: page,
 			action: STATS.init,
 			index: loadMoreLimitNum //loading more test time limit
 		}
@@ -211,36 +210,76 @@ class NowPlays extends Component {
 
 		)
 	}
-	componentDidUpdate() {
+
+	// 即将更新DOM
+	componentWillUpdate() {
+			this.props.getPage(page);
+		}
+		// 	//即将进入dom
+		// componentWillMount() {
+		// 		window.addEventListener('scroll', this.handleScroll);
+		// 	}
+		// 	//销毁时
+		// componentWillUnmount() {
+		// 	window.removeEventListener('scroll', this.handleScroll);
+		// }
+
+	//获取滚动数据
+	handleScroll = () => {
+		var top = document.documentElement.scrollTop || document.body.scrollTop;
+		console.log(top)
+		this.setState({
+
+		});
+		// if (top > 600) {
+		// 	var that = this;
+		// 	//console.log(page())
+		// 	$.get('http://m.maizuo.com/v4/api/film/now-playing?page=1&count=7, function(res) {
+		// 		var data = JSON.parse(res).data.films;
+
+		// 		that.props.getNowplay(data);
+		// 	})
+		// }
 
 
 
 	}
-	componentDidMount() {
-		var that = this;
-		console.log(page)
-		$.get('http://localhost:8080/now_playing?', {
-			page: page
-		}, function(res) {
-			var data = JSON.parse(res).data.films;
 
+	componentDidMount() {
+		window.addEventListener('scroll', this.handleScroll);
+		console.log(this.props.page)
+		var that = this;
+		//console.log(page())
+		$.get('http://localhost:8080/now_playing?page=' + that.props.page, function(res) {
+			var data = JSON.parse(res).data.films;
 			that.props.getNowplay(data);
 		})
 	}
 }
 
+
+
 var NowPlay = connect(
 	function(state, ownProps) {
 		return {
 			now_play: state.now_play,
+			page: state.page,
 		}
 	}, {
 		getNowplay: function(data) {
 			// 只需要return 一个 action
 			return {
 				type: 'NOW_PLAY',
-				now_play: data
+				now_play: data,
+
 			}
+		},
+		getPage: function(page) {
+			return {
+				type: 'CHANGE_PAGE',
+				page: page
+			}
+
 		}
 	}
 )(NowPlays)

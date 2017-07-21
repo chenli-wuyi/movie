@@ -1,0 +1,92 @@
+.yanchu{
+	section{
+		flex: 1;
+    	padding-bottom: 50px;
+    	.cont{
+		    width: 100%;
+			margin: 0 auto;
+			ul{
+				padding: 0;
+    			margin: 0;
+    			display: flex;
+    			flex-direction: column;
+    			li{
+    				background-color: #fff;
+				    flex: 1;
+				    margin-top: 5px;
+				    box-sizing: border-box;
+				    padding: 10px 10px 15px 10px;
+				    min-height: 200px;
+				    overflow-x: hidden;
+				    .pic{
+				    	background-color: #ebebeb;
+					    box-sizing: border-box;
+					    width: 100%;
+					    border-radius: 2px;
+					    img{
+					    	width: 100%;
+					    	opacity: 1;
+					    	display: block;
+					    }
+				    }
+					p{
+						font-size: 17px;
+						margin: 6px 0 0 0;
+    					line-height: 1.2em;
+					}
+					.count{
+					    max-height: 38px;
+				        margin-top: 10px;
+				        display: inline-flex;
+			            white-space: nowrap;
+			             justify-content:flex-start;
+				         overflow: hidden;
+
+   					 align-items: center;
+   					 div{
+   					 	max-height: 38px;
+   					 	max-width: 101px;
+   					 	font-size: 14px;
+   					 	padding: 4px;
+						color: #ff5000;
+						text-align: center;
+						background-size: contain;
+						background-repeat: no-repeat;
+						background-image: url('//static.maizuo.com/ticket/h5/v1/static/asset/08e233f59b4d9109827be72fd542b291.svg');
+						
+						display: inline-block;
+						margin: 0 0 0 10px;
+						span{
+						    width: 89px;
+						    font-size: 8px;
+						    color: rgba(0, 0, 0, 0.4);
+ 						 	display: block;
+ 						 	text-align: center;
+						}
+   					 }
+   					 svg{
+   					 	margin: 0 0 0 10px;
+   					 	
+						g{
+						    fill: rgb(0, 0, 0);
+						    fill-opacity: 0.26;
+						    fill-rule: evenodd;
+						}
+   					 }
+					}
+    			}
+			}
+			p{
+			    font-size: 14px;
+			    margin: 20px auto 0;
+			    color: rgba(150, 144, 144, 0.4);
+			    text-align: center;
+			}
+    	}
+	}
+}
+
+
+
+
+

@@ -128,7 +128,7 @@ router.get('/come_play', function(req, res) {
 	// http://m.maizuo.com/v4/api/billboard/home?__t=1500253189212
 	var time = new Date().getTime();
 
-	http.get('http://m.maizuo.com/v4/api/film/coming-soon?page=1&count=7', function(response) {
+	http.get('http://m.maizuo.com/v4/api/film/coming-soon?page=' + page + '&count=7', function(response) {
 
 		var data = '';
 		response.on('data', function(chunk) {
@@ -192,5 +192,28 @@ router.get('/cinema', function(req, res) {
 
 })
 
+// 演出接口
+router.get('/yanchu', function(req, res) {
 
+	var page = req.query.page;
+	console.log(page)
+		// 要去请求  卖座网的接口
+
+	// http://m.maizuo.com/v4/api/film/now-playing?page=1&count=7
+	var time = new Date().getTime();
+
+	http.get('http://ticket.maizuo.com/api/schedule?__t=' + time + '&pageSize=6&pageNumber=1&sortKey=sortSalesCount&sortType=desc&isMultiSku=1', function(response) {
+
+		var data = '';
+		response.on('data', function(chunk) {
+			data += chunk;
+		})
+
+		response.on('end', function() {
+			res.send(data);
+		})
+
+	})
+
+})
 module.exports = router;

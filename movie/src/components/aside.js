@@ -17,9 +17,12 @@ import {
 import store from '../redux/store.js';
 class Asides extends Component {
 	render() {
-		return (
+			var that = this;
 
-			<aside>
+
+			return (
+
+				<aside>
 					<div className="aside_content">
 						<nav>
 							<ul onClick = {this.props.change}>
@@ -28,7 +31,7 @@ class Asides extends Component {
 									
 									return(
 										
-										<li  key={index} >
+										<li  key={index} onClick={that.props.changTitle.bind(that,index)}>
 											<NavLink  to={item.path} exact>
 												<span>{item.name}</span>
 												<i className="iconfont ">&#xe678;</i>
@@ -79,17 +82,16 @@ class Asides extends Component {
 						*/}	
 							</ul>
 						</nav>
+						<div onClick={this.props.change}></div>
 					</div>
 				</aside>
 
-		)
-	}
-	componentDidUpdate() {
+			)
+		}
+		// changTitle(index) {
+		// 	this.props.aside_list[index].title
+		// }
 
-	}
-	changeStyle = function() {
-
-	}
 
 }
 
@@ -111,9 +113,10 @@ var Aside = connect(
 				isshow: store.getState().isshow
 			}
 		},
-		changTitle: function() {
+		changTitle: function(index) {
 			return {
-
+				type: 'CHANGE_TITLE',
+				title: store.getState().aside_list[index].title,
 			}
 		}
 	}
