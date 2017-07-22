@@ -126,14 +126,19 @@ class ComePlays extends Component {
 		}
 		//获取滚动数据
 	handleScroll = () => {
-			console.log(page);
+			console.log(flag)
 			var list = this.props.come_play; //获取state的数据
 			var filmes = []; //用来接收新的数据
 			var that = this; //改变一下this指向
-			var top = document.documentElement.scrollTop || document.body.scrollTop; //页面的滚动
+			var top = (document.documentElement.scrollTop || document.body.scrollTop) + 50; //页面的滚动
+			console.log(top)
 			var height = document.documentElement.clientHeight;
-			console.log(height)
-			if (top > 100 * page && flag) {
+			var nowheight = 200 + height * (page-3);
+			console.log(nowheight)
+			// console.log(height)
+			if (top > nowheight && flag) {
+				flag = false;
+				
 				$.get('http://localhost:8080/come_play?page=' + page + '&count=7', function(res) {
 					if (res) {
 						var data = JSON.parse(res).data.films;
@@ -141,15 +146,16 @@ class ComePlays extends Component {
 						var set = new Set(filme);
 						filmes = new Array(...set); //数组去重
 						that.props.getComeplay(filmes);
-						page++; //页数+1
+						
 						flag = true;
 					} else {
 						flag = false;
 					}
 				})
-
+				page++; //页数+1
 			} else {
-				flag = false;
+				flag = true;
+				
 			}
 		}
 		//销毁时

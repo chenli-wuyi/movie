@@ -19,99 +19,100 @@ import ReactPullLoad, {
 //引入css
 import '../css/nowplay.css';
 import '../css/iconfont/iconfont.css';
-const cData = [
-	"http://img1.gtimg.com/15/1580/158031/15803178_1200x1000_0.jpg",
-	"http://img1.gtimg.com/15/1580/158031/15803179_1200x1000_0.jpg",
-	"http://img1.gtimg.com/15/1580/158031/15803181_1200x1000_0.jpg",
-	"http://img1.gtimg.com/15/1580/158031/15803182_1200x1000_0.jpg",
-	"http://img1.gtimg.com/15/1580/158031/15803183_1200x1000_0.jpg",
-];
-var page = 1;
-const loadMoreLimitNum = Math.floor(cData.length);
+// const cData = [
+// 	"http://img1.gtimg.com/15/1580/158031/15803178_1200x1000_0.jpg",
+// 	"http://img1.gtimg.com/15/1580/158031/15803179_1200x1000_0.jpg",
+// 	"http://img1.gtimg.com/15/1580/158031/15803181_1200x1000_0.jpg",
+// 	"http://img1.gtimg.com/15/1580/158031/15803182_1200x1000_0.jpg",
+// 	"http://img1.gtimg.com/15/1580/158031/15803183_1200x1000_0.jpg",
+// ];
+var page = 1;//页数
+var flag = true;//是否滚动高度大于当前页面的高度
+// const loadMoreLimitNum = Math.floor(cData.length);
 class NowPlays extends Component {
-	constructor() {
-		super();
-		this.state = {
-			hasMore: true,
-			data: cData,
-			page: page,
-			action: STATS.init,
-			index: loadMoreLimitNum //loading more test time limit
-		}
-	}
+	// constructor() {
+	// 	super();
+	// 	this.state = {
+	// 		hasMore: true,
+	// 		data: cData,
+	// 		page: page,
+	// 		action: STATS.init,
+	// 		index: loadMoreLimitNum //loading more test time limit
+	// 	}
+	// }
 
-	handleAction = (action) => {
-		console.info(action, this.state.action, action === this.state.action);
-		//new action must do not equel to old action
-		if (action === this.state.action) {
-			return false
-		}
+	// handleAction = (action) => {
+	// 	console.info(action, this.state.action, action === this.state.action);
+	// 	//new action must do not equel to old action
+	// 	if (action === this.state.action) {
+	// 		return false
+	// 	}
 
-		if (action === STATS.refreshing) { //刷新
-			this.handRefreshing();
-		} else if (action === STATS.loading) { //加载更多
-			this.handLoadMore();
-		} else {
-			//DO NOT modify below code
-			this.setState({
-				action: action
-			})
-		}
-	}
+	// 	if (action === STATS.refreshing) { //刷新
+	// 		this.handRefreshing();
+	// 	} else if (action === STATS.loading) { //加载更多
+	// 		this.handLoadMore();
+	// 	} else {
+	// 		//DO NOT modify below code
+	// 		this.setState({
+	// 			action: action
+	// 		})
+	// 	}
+	// }
 
-	handRefreshing = () => {
-		if (STATS.refreshing === this.state.action) {
-			return false
-		}
+	// handRefreshing = () => {
+	// 	if (STATS.refreshing === this.state.action) {
+	// 		return false
+	// 	}
 
-		setTimeout(() => {
-			//refreshing complete
-			this.setState({
-				data: cData,
-				hasMore: true,
-				action: STATS.refreshed,
-				index: loadMoreLimitNum,
-				page: page,
-			});
-		}, 3000)
+	// 	setTimeout(() => {
+	// 		//refreshing complete
+	// 		this.setState({
+	// 			data: cData,
+	// 			hasMore: true,
+	// 			action: STATS.refreshed,
+	// 			index: loadMoreLimitNum,
+	// 			page: page,
+	// 		});
+	// 	}, 3000)
 
-		this.setState({
-			action: STATS.refreshing
-		})
-	}
+	// 	this.setState({
+	// 		action: STATS.refreshing
+	// 	})
+	// }
 
-	handLoadMore = () => {
+	// handLoadMore = () => {
 
-		if (STATS.loading === this.state.action) {
-			return false
-		}
+	// 	if (STATS.loading === this.state.action) {
+	// 		return false
+	// 	}
 
-		setTimeout(() => {
-			if (this.state.index === 0) {
-				this.setState({
-					action: STATS.reset,
-					hasMore: false
-				});
-			} else {
-				this.setState({
-					data: [...this.state.data, cData[0], cData[1]],
-					action: STATS.reset,
-					index: this.state.index - 1,
-					page: page++,
-				});
-			}
-		}, 3000)
+	// 	setTimeout(() => {
+	// 		if (this.state.index === 0) {
+	// 			this.setState({
+	// 				action: STATS.reset,
+	// 				hasMore: false
+	// 			});
+	// 		} else {
+	// 			this.setState({
+	// 				data: [...this.state.data, cData[0], cData[1]],
+	// 				action: STATS.reset,
+	// 				index: this.state.index - 1,
+	// 				page: page++,
+	// 			});
+	// 		}
+	// 	}, 3000)
 
-		this.setState({
-			action: STATS.loading
-		})
+	// 	this.setState({
+	// 		action: STATS.loading
+	// 	})
 
-	}
+	// }
 	render() {
-		const {
-			data,
-			hasMore
-		} = this.state
+		// const {
+		// 	data,
+		// 	hasMore
+		// } = this.state
 
 		return (
 
@@ -126,14 +127,14 @@ class NowPlays extends Component {
 								<div >即将上映</div>
 							</NavLink>
 						</div>
-						<div className="film_list">
-							<ReactPullLoad 
+						  <div className="film_list"> 
+							{/* <ReactPullLoad 
 					          downEnough={150}
 					          action={this.state.action}
 					          handleAction={this.handleAction}
 					          hasMore={hasMore}
 					         
-					          distanceBottom={1000}>
+					          distanceBottom={1000}>  */}
 								<ul>
 
 								{
@@ -167,11 +168,11 @@ class NowPlays extends Component {
 										)
 									}):""
 								}
-								{
+								{/* {
 					              data.map( (str, index )=>{
 					                return <li key={index}><img src={str} alt=""/></li>
 					              })
-					            }
+					            } */}
 							{/*
 									<NavLink to="#">
 										<li>
@@ -201,8 +202,8 @@ class NowPlays extends Component {
 									
 									
 								</ul>
-					 		</ReactPullLoad>
-						</div>
+					 		{/* </ReactPullLoad> */}
+						 </div> 
 					</div> 
 				</section>
 			</div >
@@ -212,48 +213,58 @@ class NowPlays extends Component {
 	}
 
 	// 即将更新DOM
-	componentWillUpdate() {
-			this.props.getPage(page);
-		}
+	// componentWillUpdate() {
+	// 		this.props.getPage(page);
+	// }
 		// 	//即将进入dom
 		// componentWillMount() {
 		// 		window.addEventListener('scroll', this.handleScroll);
 		// 	}
-		// 	//销毁时
-		// componentWillUnmount() {
-		// 	window.removeEventListener('scroll', this.handleScroll);
-		// }
-
-	//获取滚动数据
-	handleScroll = () => {
-		var top = document.documentElement.scrollTop || document.body.scrollTop;
-		console.log(top)
-		this.setState({
-
-		});
-		// if (top > 600) {
-		// 	var that = this;
-		// 	//console.log(page())
-		// 	$.get('http://m.maizuo.com/v4/api/film/now-playing?page=1&count=7, function(res) {
-		// 		var data = JSON.parse(res).data.films;
-
-		// 		that.props.getNowplay(data);
-		// 	})
-		// }
-
-
-
-	}
-
+	
 	componentDidMount() {
 		window.addEventListener('scroll', this.handleScroll);
-		console.log(this.props.page)
 		var that = this;
 		//console.log(page())
-		$.get('http://localhost:8080/now_playing?page=' + that.props.page, function(res) {
-			var data = JSON.parse(res).data.films;
-			that.props.getNowplay(data);
+		$.get('http://localhost:8080/now_playing?page=' + page +'&count=7', function(res) {
+			if(res){
+				var data = JSON.parse(res).data.films;
+				that.props.getNowplay(data);
+				page++;
+			}
+		
 		})
+	}
+		//获取滚动数据
+	handleScroll = () => {
+		var top = document.documentElement.scrollTop || document.body.scrollTop;//滚动
+		var height = document.documentElement.clientHeight;//当前页面的高度
+		var list = this.props.now_play;//获取state的数据
+		var films = [];//用来接收新数据
+		var that = this;
+		var nowheight = 200 + height * (page -3);//当前滚到高度
+		if( top > nowheight && flag){
+			flag = false;
+				$.get('http://localhost:8080/now_playing?page=' + page +'&count=7',function(res){
+					if(res){
+						var data = JSON.parse(res).data.films;
+						var film = list.concat(data);
+						var set = new Set(film);
+						films = new Array(...set);//去重
+						that.props.getNowplay(films);
+						flag= true;
+					}else {
+						flag = false;
+					}
+				})
+				page++;//页数+1
+		}else{
+			flag = true;
+		}
+		
+	}
+		// 	//销毁时
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
 	}
 }
 
@@ -274,13 +285,13 @@ var NowPlay = connect(
 
 			}
 		},
-		getPage: function(page) {
-			return {
-				type: 'CHANGE_PAGE',
-				page: page
-			}
+		// getPage: function(page) {
+		// 	return {
+		// 		type: 'CHANGE_PAGE',
+		// 		page: page
+		// 	}
 
-		}
+		// }
 	}
 )(NowPlays)
 
